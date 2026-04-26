@@ -3,143 +3,814 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <!-- === OPTIMIZED META TAGS (Long-tail keywords) === -->
-  <title>Orbix – Freelance Web Designer for Small Businesses & Cafes in Nigeria</title>
-  <meta name="description" content="Orbix offers affordable web design, UI/UX, and branding for local businesses in Lagos and across Nigeria. Perfect for cafes, artists, and startups.">
-  <meta name="keywords" content="web designer for cafes Lagos, freelance web developer Nigeria, affordable website design, small business branding Nigeria">
+  <title>Orbix – Freelance Web Designer for Small Businesses & Cafes</title>
+  <meta name="description" content="Orbix offers affordable, professional web design, UI/UX, and branding for cafes, artists, and startups worldwide. Stand out online with a modern, high-converting site.">
+  <meta name="keywords" content="freelance web designer, affordable website design, small business branding, UI/UX designer, startup website">
   <meta name="author" content="Orbix">
   <link rel="canonical" href="https://www.orbix.agency/">
 
-  <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="Orbix – Local Web Designer for Nigerian Small Businesses">
-  <meta property="og:description" content="Affordable, modern websites for cafes, artists, and startups in Lagos. Let's build your online presence.">
-  <meta property="og:image" content="https://www.orbix.agency/images/og-nigeria.jpg">
+  <meta property="og:title" content="Orbix – Freelance Web Designer for Small Businesses & Cafes">
+  <meta property="og:description" content="Affordable, modern websites for cafes, artists, and startups. Let's build your online presence together.">
+  <meta property="og:image" content="https://www.orbix.agency/images/og-orbix.jpg">
   <meta property="og:url" content="https://www.orbix.agency/">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Favicon & theme -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <meta name="theme-color" content="#0D3B66">
 
-  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-  <!-- === JSON-LD SCHEMA MARKUP (Local Business + Person) === -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Orbix",
-    "image": "https://www.orbix.agency/orbixlogo.jpg",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Lagos",
-      "addressRegion": "LA",
-      "addressCountry": "NG"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 6.5244,
-      "longitude": 3.3792
-    },
-    "url": "https://www.orbix.agency/",
-    "telephone": "+2348135117900",
-    "priceRange": "₦",
-    "openingHours": "Mo-Fr 09:00-18:00",
-    "sameAs": [
-      "https://wa.me/+2348135117900",
-      "https://www.instagram.com/orbix.ng"
-    ],
-    "description": "Freelance web designer specializing in affordable websites for cafes, artists, and small businesses in Lagos.",
-    "serviceArea": {
-      "@type": "GeoCircle",
-      "geoMidpoint": {
-        "@type": "GeoCoordinates",
-        "latitude": 6.5244,
-        "longitude": 3.3792
-      },
-      "geoRadius": "50000"
+  <style>
+    :root {
+      --bg: #f9fafb;
+      --surface: #ffffff;
+      --surface-alt: #f0f4f8;
+      --text: #1a1a2e;
+      --text-secondary: #4a5568;
+      --primary: #0D3B66;
+      --accent: #00B4D8;
+      --accent-glow: rgba(0, 180, 216, 0.2);
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+      --shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.12);
+      --radius: 14px;
+      --radius-sm: 8px;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --font: 'Poppins', system-ui, sans-serif;
+      --max-width: 1200px;
+      --header-height: 70px;
     }
-  }
-  </script>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--header-height);
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -60px;
+      left: 16px;
+      background: var(--primary);
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+      z-index: 1000;
+      font-weight: 600;
+      text-decoration: none;
+      transition: top 0.3s;
+    }
+    .skip-link:focus {
+      top: 0;
+      outline: 3px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+    .header-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      height: var(--header-height);
+      gap: 20px;
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .logo-img {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--accent);
+      background: #fff;
+    }
+    .logo-text {
+      font-weight: 700;
+      font-size: 1.3rem;
+      letter-spacing: -0.3px;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+    .header-phone {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .header-phone i {
+      color: var(--accent);
+      font-size: 0.85rem;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-shrink: 0;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color var(--transition);
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width var(--transition);
+    }
+    .nav-links a:hover::after,
+    .nav-links a:focus-visible::after {
+      width: 100%;
+    }
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--accent);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+      z-index: 1001;
+      background: none;
+      border: none;
+      border-radius: var(--radius-sm);
+      transition: background var(--transition);
+    }
+    .hamburger:hover {
+      background: var(--surface-alt);
+    }
+    .hamburger div {
+      width: 26px;
+      height: 3px;
+      background: var(--text);
+      border-radius: 3px;
+      transition: all var(--transition);
+      transform-origin: center;
+    }
+    .hamburger.active div:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active div:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    .hamburger.active div:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 70px 24px 50px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(160deg, var(--surface) 0%, var(--surface-alt) 100%);
+    }
+    .hero .orb {
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, var(--accent-glow), transparent 75%);
+      pointer-events: none;
+      animation: orbFloat 8s ease-in-out infinite;
+      opacity: 0.6;
+    }
+    @keyframes orbFloat {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      25% { transform: translate(-30px, 20px) scale(1.05); }
+      50% { transform: translate(10px, -30px) scale(0.95); }
+      75% { transform: translate(25px, 10px) scale(1.02); }
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto 28px;
+      position: relative;
+      z-index: 1;
+    }
+    .btn {
+      display: inline-block;
+      padding: 13px 30px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all var(--transition);
+      margin: 6px;
+      position: relative;
+      z-index: 1;
+      border: 2px solid transparent;
+      background: var(--primary);
+      color: #fff;
+    }
+    .btn:hover {
+      background: #0a2f52;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+    .btn-primary {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+    .btn-primary:hover {
+      background: #009bb8;
+      border-color: #009bb8;
+      box-shadow: 0 0 24px var(--accent-glow);
+    }
+
+    .trust-stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 30px 24px;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .trust-stats.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .stat-item {
+      text-align: center;
+      min-width: 100px;
+    }
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1.1;
+    }
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-top: 4px;
+    }
+
+    section {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 50px 24px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 30px;
+      color: var(--primary);
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px 24px;
+      text-align: center;
+      transition: all var(--transition);
+      box-shadow: var(--shadow-sm);
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent);
+    }
+    .card i {
+      display: block;
+      margin-bottom: 14px;
+      color: #00B4D8;
+    }
+    .card h3 {
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--primary);
+    }
+    .card p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    /* ── PORTFOLIO (now clickable links with images) ── */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .portfolio-item {
+      display: block;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: all var(--transition);
+      box-shadow: var(--shadow-sm);
+      text-decoration: none;
+      color: inherit;
+    }
+    .portfolio-item:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent);
+    }
+    .portfolio-img {
+      height: 200px;
+      overflow: hidden;
+      background: var(--surface-alt);
+    }
+    .portfolio-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .portfolio-item:hover .portfolio-img img {
+      transform: scale(1.03);
+    }
+    .portfolio-info {
+      padding: 16px 18px;
+    }
+    .portfolio-info h4 {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .portfolio-info p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .testimonial-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition);
+    }
+    .testimonial-card:hover {
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent);
+    }
+    .testimonial-card>p {
+      font-style: italic;
+      color: var(--text);
+      margin-bottom: 16px;
+      padding-left: 20px;
+      position: relative;
+    }
+    .testimonial-card>p::before {
+      content: '\201C';
+      position: absolute;
+      left: 0;
+      top: -6px;
+      font-size: 2.5rem;
+      color: var(--accent);
+      line-height: 1;
+      font-style: normal;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .author-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    .author-info h5 {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin: 0;
+    }
+    .author-info span {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      margin-bottom: 10px;
+      background: var(--surface);
+      overflow: hidden;
+    }
+    .faq-question {
+      padding: 16px 20px;
+      cursor: pointer;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+      transition: background var(--transition);
+    }
+    .faq-question:hover {
+      background: var(--surface-alt);
+    }
+    .faq-question i {
+      transition: transform var(--transition);
+      font-size: 0.8rem;
+      color: var(--accent);
+    }
+    .faq-question.active i {
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+      padding: 0 20px;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      background: var(--surface-alt);
+    }
+    .faq-answer.show {
+      max-height: 200px;
+      padding: 16px 20px;
+    }
+
+    .contact {
+      text-align: center;
+    }
+    #contact-form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    #contact-form input,
+    #contact-form textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 1rem;
+      transition: all var(--transition);
+      resize: vertical;
+    }
+    #contact-form input:focus,
+    #contact-form textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px var(--accent-glow);
+    }
+    #contact-form button {
+      padding: 14px;
+      border-radius: 30px;
+      border: none;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all var(--transition);
+      letter-spacing: 0.3px;
+    }
+    #contact-form button:hover {
+      background: #009bb8;
+      box-shadow: 0 0 20px var(--accent-glow);
+      transform: translateY(-2px);
+    }
+    .trust-badge {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-top: 8px;
+    }
+    .trust-badge i {
+      color: var(--accent);
+      margin-right: 4px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .whatsapp-btn,
+    .quote-btn {
+      position: fixed;
+      right: 20px;
+      z-index: 998;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      font-size: 1.4rem;
+      color: #fff;
+      box-shadow: var(--shadow-lg);
+      transition: all var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .whatsapp-btn {
+      bottom: 90px;
+      background: #25D366;
+    }
+    .whatsapp-btn:hover {
+      background: #1fb855;
+      transform: scale(1.08);
+      box-shadow: 0 0 20px rgba(37, 211, 102, 0.5);
+    }
+    .quote-btn {
+      bottom: 20px;
+      background: var(--accent);
+    }
+    .quote-btn:hover {
+      background: #009bb8;
+      transform: scale(1.08);
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+
+    @media (max-width: 900px) {
+      .header-phone {
+        display: none;
+      }
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 270px;
+        height: 100vh;
+        background: var(--surface);
+        flex-direction: column;
+        padding: 90px 30px 30px;
+        gap: 24px;
+        box-shadow: var(--shadow-lg);
+        transition: right 0.35s ease;
+        z-index: 1000;
+      }
+      .nav-links.show {
+        right: 0;
+      }
+      .nav-links a {
+        font-size: 1.1rem;
+      }
+      .hamburger {
+        display: flex;
+      }
+      .hero {
+        padding: 50px 20px 40px;
+      }
+      .hero .orb {
+        width: 200px;
+        height: 200px;
+        top: -50px;
+        right: -50px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo-text {
+        font-size: 1rem;
+      }
+      .logo-img {
+        width: 36px;
+        height: 36px;
+      }
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+      .hero p {
+        font-size: 0.95rem;
+      }
+      .btn {
+        padding: 11px 22px;
+        font-size: 0.9rem;
+      }
+      .stat-number {
+        font-size: 1.6rem;
+      }
+      section {
+        padding: 35px 16px;
+      }
+      section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+      }
+      .whatsapp-btn,
+      .quote-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem;
+        right: 12px;
+      }
+      .whatsapp-btn {
+        bottom: 75px;
+      }
+      .quote-btn {
+        bottom: 14px;
+      }
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible,
+    .hamburger:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+  </style>
 </head>
 <body>
-  <a href="#main-content" class="skip-link" style="position:absolute; top:-40px; left:0; background:#0D3B66; color:#fff; padding:8px;">Skip to main content</a>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <header>
     <div class="header-container">
       <div class="logo-container">
-        <img src="orbixlogo.jpg" alt="Orbix logo" class="logo-img" width="50" height="50">
+        <img src="orbixlogo.jpg" alt="Orbix logo" class="logo-img" width="50" height="50" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="logo-text">Orbix<span style="color:#00B4D8;">Freelance</span></div>
       </div>
       <div class="header-phone">
         <i class="fas fa-phone-alt"></i> <span>+234 813 511 7900</span>
       </div>
-      <nav class="nav-links">
+      <nav class="nav-links" id="nav-menu">
         <a href="#portfolio">Portfolio</a>
         <a href="#testimonials">Testimonials</a>
         <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
-        <button class="toggle-btn" id="mode-toggle">Dark Mode</button>
       </nav>
-      <div class="hamburger" id="hamburger" role="button" tabindex="0" aria-label="Open menu" aria-expanded="false">
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
         <div></div><div></div><div></div>
-      </div>
+      </button>
     </div>
   </header>
 
   <main id="main-content">
     <section class="hero">
       <div class="orb"></div>
-      <h1>Affordable Web Design for Small Businesses</h1>
-      <p>I build modern websites for cafes, artists, and startups in Nigeria. Let's get you online today.</p>
+      <h1>Affordable Web Design for Small Businesses & Cafes</h1>
+      <p>I build modern, high-converting websites for cafes, artists, and startups anywhere in the world. Let's get you online today.</p>
       <div>
         <a href="#contact" class="btn">Free Quote</a>
         <a href="#portfolio" class="btn btn-primary">See My Work</a>
       </div>
     </section>
 
-    <div class="trust-stats visible" style="max-width:1200px; margin:40px auto;">
-      <div class="stat-item"><div class="stat-number">10+</div><div class="stat-label">Projects in Lagos</div></div>
+    <div class="trust-stats visible">
+      <div class="stat-item"><div class="stat-number">10+</div><div class="stat-label">Projects Completed</div></div>
       <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">Happy Clients</div></div>
       <div class="stat-item"><div class="stat-number">24h</div><div class="stat-label">Response Time</div></div>
       <div class="stat-item"><div class="stat-number">1</div><div class="stat-label">Dedicated Freelancer</div></div>
     </div>
 
     <section id="services">
-      <h2>Services for Local Businesses</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-        <div class="card"><i class="fas fa-code" style="font-size:2.5rem; color:#00B4D8; margin-bottom:15px;"></i><h3>Web Development</h3><p>Responsive, SEO-friendly websites tailored for cafes, restaurants, and small shops.</p></div>
-        <div class="card"><i class="fas fa-paint-brush" style="font-size:2.5rem; color:#00B4D8; margin-bottom:15px;"></i><h3>UI/UX Design</h3><p>Clean, mobile-first designs that make your brand stand out in Lagos.</p></div>
-        <div class="card"><i class="fas fa-bullhorn" style="font-size:2.5rem; color:#00B4D8; margin-bottom:15px;"></i><h3>Digital Branding</h3><p>Logos, color palettes, and social media assets for your startup.</p></div>
+      <h2>Services for Small Businesses</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+        <div class="card"><i class="fas fa-code" style="font-size:2.5rem; margin-bottom:15px;"></i><h3>Web Development</h3><p>Responsive, SEO-friendly websites tailored for cafes, restaurants, and small shops.</p></div>
+        <div class="card"><i class="fas fa-paint-brush" style="font-size:2.5rem; margin-bottom:15px;"></i><h3>UI/UX Design</h3><p>Clean, mobile-first designs that make your brand stand out anywhere.</p></div>
+        <div class="card"><i class="fas fa-bullhorn" style="font-size:2.5rem; margin-bottom:15px;"></i><h3>Digital Branding</h3><p>Logos, color palettes, and social media assets that tell your story.</p></div>
       </div>
     </section>
 
+    <!-- ── PORTFOLIO with links and images ── -->
     <section id="portfolio">
       <h2>Recent Projects</h2>
       <div class="portfolio-grid">
-        <div class="portfolio-item">
-          <div class="portfolio-img"><i class="fas fa-laptop fa-3x"></i></div>
-          <div class="portfolio-info"><h4>Local Cafe Website</h4><p>Modern menu display, contact form, and location map.</p></div>
-        </div>
-        <div class="portfolio-item">
-          <div class="portfolio-img"><i class="fas fa-mobile-alt fa-3x"></i></div>
-          <div class="portfolio-info"><h4>Fitness App UI</h4><p>Concept design for a local gym's booking app.</p></div>
-        </div>
-        <div class="portfolio-item">
-          <div class="portfolio-img"><i class="fas fa-paint-brush fa-3x"></i></div>
-          <div class="portfolio-info"><h4>Artist Portfolio, VI</h4><p>Gallery site for a Lagos-based painter.</p></div>
-        </div>
-        <div class="portfolio-item">
-          <div class="portfolio-img"><i class="fas fa-globe fa-3x"></i></div>
-          <div class="portfolio-info"><h4> Shop Rebrand</h4><p>Logo and brand kit for a local boutique.</p></div>
-        </div>
+        <!-- Project 1 -->
+        <a href="https://cafedemo.netlify.app" target="_blank" rel="noopener" class="portfolio-item">
+          <div class="portfolio-img">
+            <img src="https://dummyimage.com/600x400/0D3B66/fff&text=Cafe+Website" alt="Cafe Website project screenshot" loading="lazy">
+          </div>
+          <div class="portfolio-info">
+            <h4>Cafe Website <i class="fas fa-external-link-alt" style="font-size:0.7rem; margin-left:4px;"></i></h4>
+            <p>Modern menu display, contact form & location map.</p>
+          </div>
+        </a>
+
+        <!-- Project 2 -->
+        <a href="https://fitnessapp-demo.netlify.app" target="_blank" rel="noopener" class="portfolio-item">
+          <div class="portfolio-img">
+            <img src="https://dummyimage.com/600x400/00B4D8/fff&text=Fitness+App+Design" alt="Fitness App UI project" loading="lazy">
+          </div>
+          <div class="portfolio-info">
+            <h4>Fitness App UI <i class="fas fa-external-link-alt" style="font-size:0.7rem; margin-left:4px;"></i></h4>
+            <p>Concept for a gym's booking & class system.</p>
+          </div>
+        </a>
+
+        <!-- Project 3 -->
+        <a href="https://artist-portfolio-demo.netlify.app" target="_blank" rel="noopener" class="portfolio-item">
+          <div class="portfolio-img">
+            <img src="https://dummyimage.com/600x400/0D3B66/fff&text=Artist+Portfolio" alt="Artist portfolio website" loading="lazy">
+          </div>
+          <div class="portfolio-info">
+            <h4>Artist Portfolio <i class="fas fa-external-link-alt" style="font-size:0.7rem; margin-left:4px;"></i></h4>
+            <p>Online gallery for a professional painter.</p>
+          </div>
+        </a>
+
+        <!-- Project 4 -->
+        <a href="https://boutique-rebrand-demo.netlify.app" target="_blank" rel="noopener" class="portfolio-item">
+          <div class="portfolio-img">
+            <img src="https://dummyimage.com/600x400/00B4D8/fff&text=Boutique+Rebrand" alt="Boutique rebranding project" loading="lazy">
+          </div>
+          <div class="portfolio-info">
+            <h4>Boutique Rebrand <i class="fas fa-external-link-alt" style="font-size:0.7rem; margin-left:4px;"></i></h4>
+            <p>Logo & brand kit for a fashion boutique.</p>
+          </div>
+        </a>
       </div>
-      <p style="text-align:center; margin-top:20px;"><em>These are some of my first projects – your business could be next!</em></p>
+      <p style="text-align:center; margin-top:20px;"><em>Click any project to visit the live website – your business could be next!</em></p>
     </section>
 
     <section id="testimonials">
@@ -147,10 +818,10 @@
       <div class="testimonials-grid">
         <div class="testimonial-card">
           <p>"Great communication and delivered exactly what I needed for my cafe's website. Highly recommended!"</p>
-          <div class="testimonial-author"><div class="author-avatar">TO</div><div class="author-info"><h5>Tunde O.</h5><span>Cafe Owner, Ikeja</span></div></div>
+          <div class="testimonial-author"><div class="author-avatar">TO</div><div class="author-info"><h5>Tunde O.</h5><span>Cafe Owner</span></div></div>
         </div>
         <div class="testimonial-card">
-          <p>"Very patient and attentive to details. Designed a logo that truly represents my brand in Surulere."</p>
+          <p>"Very patient and attentive to details. Designed a logo that truly represents my brand."</p>
           <div class="testimonial-author"><div class="author-avatar">FO</div><div class="author-info"><h5>Funmi A.</h5><span>Boutique Owner</span></div></div>
         </div>
         <div class="testimonial-card">
@@ -164,7 +835,7 @@
       <h2>Frequently Asked Questions</h2>
       <div class="faq-item">
         <div class="faq-question">How quickly can you start? <i class="fas fa-chevron-down"></i></div>
-        <div class="faq-answer">I can begin within 48 hours after we discuss your project. Quick turnaround for Lagos clients!</div>
+        <div class="faq-answer">I can begin within 48 hours after we discuss your project. Quick turnaround for clients worldwide!</div>
       </div>
       <div class="faq-item">
         <div class="faq-question">What if I'm not satisfied? <i class="fas fa-chevron-down"></i></div>
@@ -180,99 +851,103 @@
       </div>
     </section>
 
-      <!-- CONTACT SECTION (fixed) -->
-  <section id="contact" class="contact">
-    <h2>Start Your Project Today</h2>
-    <!-- Added id="contact-form" to the form -->
-    <form id="contact-form" action="#" method="post">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="5" placeholder="Tell me about your business and idea..." required></textarea>
-      <button type="submit">Send Message →</button>
-      <div class="trust-badge"><i class="fas fa-lock"></i> Your info is safe • 100% confidential</div>
-    </form>
-  </section>
+    <section id="contact" class="contact">
+      <h2>Start Your Project Today</h2>
+      <form id="contact-form" action="https://formsubmit.co/olajideolabisi245@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New message from Orbix website!">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Tell me about your business and idea..." required></textarea>
+        <button type="submit">Send Message →</button>
+        <div class="trust-badge"><i class="fas fa-lock"></i> Your info is safe • 100% confidential</div>
+      </form>
+    </section>
   </main>
 
   <footer>
-    <p>&copy; 2026 Orbix. Serving Diligently. | <i class="fas fa-envelope"></i>
-<a href="mailto: olajideolabisi245@gmail.com? subject= hello">olajideolabisi245@gmail.com</a>| <i class="fas fa-phone"></i> <a href="tel:+2348135117900">+2348135117900</a></p>
-    <p style="margin-top:10px; font-size:0.9rem;">Proudly based in Nigeria – ready to work with local businesses!</p>
+    <p>&copy; 2026 Orbix. Serving with diligence. |
+      <i class="fas fa-envelope"></i>
+      <a href="mailto:olajideolabisi245@gmail.com?subject=Hello">olajideolabisi245@gmail.com</a> |
+      <i class="fas fa-phone"></i> <a href="tel:+2348135117900">+2348135117900</a>
+    </p>
+    <p style="margin-top:10px; font-size:0.9rem;">Proudly working with clients worldwide – let's build something great together.</p>
   </footer>
 
   <button class="whatsapp-btn" onclick="window.open('https://wa.me/+2348135117900','_blank')" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></button>
   <button class="quote-btn" onclick="window.location.href='#contact'" aria-label="Get quick quote"><i class="fas fa-comment-dollar"></i></button>
 
   <script>
+    // Scroll animations
     const sections = document.querySelectorAll('section');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if(entry.isIntersecting){ entry.target.classList.add('visible'); }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
-    }, { threshold:0.2 });
+    }, { threshold: 0.15 });
     sections.forEach(section => observer.observe(section));
 
-    const modeBtn = document.getElementById('mode-toggle');
-    modeBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-      modeBtn.textContent = document.body.classList.contains('dark') ? 'Light Mode' : 'Dark Mode';
-    });
+    const trustStats = document.querySelector('.trust-stats');
+    if (trustStats && !trustStats.classList.contains('visible')) {
+      const trustObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      }, { threshold: 0.3 });
+      trustObserver.observe(trustStats);
+    }
 
+    // Hamburger menu
     const hamburger = document.getElementById('hamburger');
-    const navLinks = document.querySelector('.nav-links');
+    const navLinks = document.getElementById('nav-menu');
     hamburger.addEventListener('click', () => {
-      const expanded = hamburger.classList.toggle('active') ? 'true' : 'false';
+      const isActive = hamburger.classList.toggle('active');
       navLinks.classList.toggle('show');
-      hamburger.setAttribute('aria-expanded', expanded);
+      hamburger.setAttribute('aria-expanded', isActive);
+      document.body.style.overflow = isActive ? 'hidden' : '';
     });
 
-    document.querySelectorAll('.faq-question').forEach(question => {
-      question.addEventListener('click', () => {
-        question.classList.toggle('active');
-        const answer = question.nextElementSibling;
-        answer.classList.toggle('show');
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('show');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
       });
     });
 
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('show')) {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('show');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        hamburger.focus();
+      }
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        document.querySelectorAll('.faq-question.active').forEach(activeQ => {
+          if (activeQ !== question) {
+            activeQ.classList.remove('active');
+            activeQ.nextElementSibling.classList.remove('show');
+          }
+        });
+        question.classList.toggle('active');
+        question.nextElementSibling.classList.toggle('show');
+      });
+    });
+
+    // Skip link
     document.querySelector('.skip-link').addEventListener('click', function(e) {
       e.preventDefault();
-      document.querySelector('#main-content').setAttribute('tabindex', '-1');
-      document.querySelector('#main-content').focus();
+      const main = document.querySelector('#main-content');
+      main.setAttribute('tabindex', '-1');
+      main.focus({ preventScroll: false });
     });
   </script>
- <!-- EmailJS Script (fixed) -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script type="text/javascript">
-    // Initialize EmailJS with your Public Key (get it from EmailJS dashboard)
-    (function() {
-      emailjs.init("YOUR_PUBLIC_KEY");   // <-- REPLACE WITH YOUR ACTUAL PUBLIC KEY
-    })();
-
-    // Target the form by its ID
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
-      event.preventDefault(); // Stop normal form submission
-
-      // Send using EmailJS - replace with your Service ID and Template ID
-      emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
-        .then(function() {
-          alert('Message sent successfully!');
-          // Optionally reset the form
-          event.target.reset();
-        }, function(error) {
-          alert('Oops… something went wrong. Please try again.');
-          console.log('EmailJS error:', error);
-        });
-    });
-  </script>
-
-  <!-- ALTERNATIVE: FormSubmit (simpler, no account needed) – just uncomment and comment the EmailJS part if you prefer
-  <script>
-    // Remove the EmailJS script above and use this form action instead:
-    // <form action="https://formsubmit.co/hello@orbix.agency" method="POST">
-    // Also add these hidden fields inside the form:
-    // <input type="hidden" name="_subject" value="New message from Orbix website">
-    // <input type="hidden" name="_captcha" value="false">
-  </script>
-  -->  
 </body>
 </html>
